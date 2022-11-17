@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="6f2a3ba10787d1108454f8ed7c1ed080" label="Timesheet" max_length="40" name="x_920045_timesheet_timesheet" type="collection">
+        <element attributes="encode_utf8=false" label="Assign To" max_length="32" name="u_assign_to" reference="sys_user" type="reference"/>
+        <element attributes="encode_utf8=false" label="Created By" max_length="32" name="u_created_by" reference="sys_user" type="reference" use_dependent_field="true"/>
+        <element default="0" label="Friday" mandatory="true" max_length="40" name="u_friday" type="integer"/>
+        <element default="0" label="Monday" mandatory="true" max_length="40" name="u_monday" type="integer"/>
+        <element attributes="encode_utf8=false" default="4cd804760703d5108454f8ed7c1ed089" label="Project" mandatory="true" max_length="32" name="u_project" reference="x_920045_timesheet_project" type="reference"/>
+        <element choice="1" default="1" label="State" mandatory="true" max_length="40" name="u_state" type="integer">
+            <choice>
+                <element inactive_on_update="false" label="Draft" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Awaiting Approval" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="Approved" sequence="2" value="3"/>
+                <element inactive_on_update="false" label="Reopen" sequence="3" value="4"/>
+                <element inactive_on_update="false" label="Closed" sequence="4" value="5"/>
+            </choice>
+        </element>
+        <element default="0" label="Thursday" mandatory="true" max_length="40" name="u_thursday" type="integer"/>
+        <element default="0" label="Tuesday" mandatory="true" max_length="40" name="u_tuesday" type="integer"/>
+        <element default="0" label="Wednesday" mandatory="true" max_length="40" name="u_wednesday" type="integer"/>
+        <element attributes="base_start=true" label="Week" max_length="80" name="u_week" type="table_name"/>
+        <element attributes="edge_encryption_enabled=true" label="End of the week" max_length="40" name="u_week_end" read_only="true" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" label="Start of the week" max_length="40" name="u_week_start" read_only="true" type="glide_date"/>
+        <index name="index">
+            <element name="u_assign_to"/>
+        </index>
+        <index name="index2">
+            <element name="u_created_by"/>
+        </index>
+        <index name="index3">
+            <element name="u_project"/>
+        </index>
+    </element>
+</database>

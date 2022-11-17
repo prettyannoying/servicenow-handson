@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="e40abfe10787d1108454f8ed7c1ed044" label="Project" max_length="40" name="x_920045_timesheet_project" type="collection">
+        <element display="true" label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Description" mandatory="true" max_length="250" name="u_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="End Date" mandatory="true" max_length="40" name="u_end_date" type="glide_date"/>
+        <element default="10" label="Maximum Weekly Hours" mandatory="true" max_length="40" name="u_max_hours" type="integer"/>
+        <element attributes="encode_utf8=false" label="Project Owner" mandatory="true" max_length="32" name="u_project_owner" reference="sys_user" type="reference" use_dependent_field="true"/>
+        <element attributes="edge_encryption_enabled=true" label="Start Date" mandatory="true" max_length="40" name="u_start_date" type="glide_date"/>
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="Team" mandatory="true" max_length="1024" name="u_team" reference="sys_user" type="glide_list"/>
+        <index name="index">
+            <element name="u_project_owner"/>
+        </index>
+    </element>
+</database>

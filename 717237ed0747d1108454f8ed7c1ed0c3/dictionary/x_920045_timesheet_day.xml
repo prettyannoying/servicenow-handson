@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="4bc6f494071351108454f8ed7c1ed040" label="Day" max_length="40" name="x_920045_timesheet_day" type="collection">
+        <element label="Date" max_length="40" name="date" type="glide_date"/>
+        <element label="Hours" max_length="40" name="hours" type="integer"/>
+        <element display="true" label="Refers to" max_length="32" name="refers_to" reference="x_920045_timesheet_timesheet" type="reference"/>
+        <index name="index">
+            <element name="refers_to"/>
+        </index>
+    </element>
+</database>
